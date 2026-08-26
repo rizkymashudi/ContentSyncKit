@@ -5,7 +5,7 @@ A Swift package for content synchronization, built for reuse across apps with th
 ## Requirements
 
 - Swift 6.2+
-- iOS 26.2+
+- iOS 15+
 
 ## Installation
 
