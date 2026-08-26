@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import ContentSyncKit
 
 struct ContentView: View {
     var body: some View {

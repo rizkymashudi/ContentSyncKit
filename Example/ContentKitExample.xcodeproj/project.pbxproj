@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		E84D77A2303E82DA00436739 /* ContentSyncKit in Frameworks */ = {isa = PBXBuildFile; productRef = E84D77A1303E82DA00436739 /* ContentSyncKit */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		E84D7777303E829E00436739 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -27,7 +31,6 @@
 		E84D7769303E829B00436739 /* ContentKitExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ContentKitExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E84D7776303E829E00436739 /* ContentKitExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ContentKitExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E84D7780303E829E00436739 /* ContentKitExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ContentKitExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E84D7793303E82DA00436739 /* ContentSyncKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = ContentSyncKit; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -53,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E84D77A2303E82DA00436739 /* ContentSyncKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,7 +80,6 @@
 		E84D7760303E829B00436739 = {
 			isa = PBXGroup;
 			children = (
-				E84D7793303E82DA00436739 /* ContentSyncKit */,
 				E84D776B303E829B00436739 /* ContentKitExample */,
 				E84D7779303E829E00436739 /* ContentKitExampleTests */,
 				E84D7783303E829E00436739 /* ContentKitExampleUITests */,
@@ -114,6 +117,7 @@
 			);
 			name = ContentKitExample;
 			packageProductDependencies = (
+				E84D77A1303E82DA00436739 /* ContentSyncKit */,
 			);
 			productName = ContentKitExample;
 			productReference = E84D7769303E829B00436739 /* ContentKitExample.app */;
@@ -197,6 +201,9 @@
 			);
 			mainGroup = E84D7760303E829B00436739;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				E84D77A0303E82DA00436739 /* XCLocalSwiftPackageReference ".." */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = E84D776A303E829B00436739 /* Products */;
 			projectDirPath = "";
@@ -580,6 +587,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		E84D77A0303E82DA00436739 /* XCLocalSwiftPackageReference ".." */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = "..";
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E84D77A1303E82DA00436739 /* ContentSyncKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ContentSyncKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E84D7761303E829B00436739 /* Project object */;
 }
