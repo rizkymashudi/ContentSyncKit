@@ -6,3 +6,12 @@ DerivedData/
 .swiftpm/configuration/registries.json
 .swiftpm/xcode/package.xcworkspace/contents.xcworkspacedata
 .netrc
+
+# Xcode build output (xcodebuild writes beside the project by default)
+build/
+DerivedData/
+*.xcresult
+
+# Claude Code agent harness
+.claude/settings.local.json
+.claude/.state/
