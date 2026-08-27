@@ -7,6 +7,8 @@ source "$(dirname "$0")/_lib.sh"
 
 [ "$(json_get tool_name)" = "Bash" ] || exit 0
 CMD="$(json_get tool_input.command)"
+# Drop heredoc bodies — documentation about a command is not the command.
+CMD="$(printf '%s' "$CMD" | sed -E "/<<-?'?[A-Za-z_]+'?/,/^[A-Za-z_]+$/d")"
 [ -z "$CMD" ] && exit 0
 
 RM_RE='(^|[;&|`]|\$\()[[:space:]]*(sudo[[:space:]]+)?rm[[:space:]]+(-[a-zA-Z]*[rRf]|--recursive|--force)'
