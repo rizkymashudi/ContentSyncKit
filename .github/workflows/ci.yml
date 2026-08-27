@@ -1,0 +1,48 @@
+name: CI
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  package:
+    name: Build, test, lint
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Show toolchain
+        run: swift --version
+
+      - name: Build
+        run: swift build
+
+      - name: Test
+        run: swift test
+
+      - name: Install SwiftLint
+        run: brew install swiftlint
+
+      - name: Lint
+        run: swiftlint lint --strict
+
+      - name: Secret scan
+        run: make check-secrets
+
+  example-app:
+    name: Build demo app
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build ContentKitExample
+        run: |
+          xcodebuild build \
+            -project Example/ContentKitExample.xcodeproj \
+            -scheme ContentKitExample \
+            -destination 'generic/platform=iOS Simulator' \
+            -quiet

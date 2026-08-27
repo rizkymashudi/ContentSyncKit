@@ -1,0 +1,45 @@
+# SwiftLint configuration for ContentSyncKit.
+#
+# This file is protected by .claude/hooks/protect-config.sh — agents must not weaken a rule
+# to make a check pass. If a rule is genuinely wrong, say so and let a human change it.
+
+included:
+  - Sources
+  - Tests
+  - Example/ContentKitExample
+  - Example/ContentKitExampleTests
+  - Example/ContentKitExampleUITests
+
+excluded:
+  - .build            # SwiftPM build artifacts and generated test runners
+  - .swiftpm
+  - Example/ContentKitExample.xcodeproj
+
+opt_in_rules:
+  - empty_count
+  - explicit_init
+  - first_where
+  - force_unwrapping
+  - implicitly_unwrapped_optional
+  - last_where
+  - redundant_nil_coalescing
+  - toggle_bool
+  - unneeded_parentheses_in_closure_argument
+
+line_length:
+  warning: 120
+  error: 160
+  ignores_comments: true
+  ignores_urls: true
+
+identifier_name:
+  min_length: 2
+  excluded: [id, to, at, up, ok]
+
+# The package is dependency-free and public-API-first; force unwrapping in shipped code is a bug.
+force_unwrapping:
+  severity: error
+force_cast:
+  severity: error
+force_try:
+  severity: error
